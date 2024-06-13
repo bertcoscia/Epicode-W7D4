@@ -24,9 +24,16 @@ window.addEventListener("DOMContentLoaded", function () {
     .then(picObj => {
       console.log(picObj);
       body.style.backgroundColor = `${picObj.avg_color}`;
+
+      // creo l'immagine
       const detailsImg = document.createElement("img");
       detailsImg.setAttribute("src", `${picObj.src.landscape}`);
       detailsImg.style.width = "100%";
       container.appendChild(detailsImg);
+
+      // creo il nome dell'artista
+      const artist = document.createElement("h2");
+      artist.innerText = `${picObj.photographer}`;
+      container.appendChild(artist);
     });
 });
