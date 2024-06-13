@@ -7,7 +7,7 @@ const loadSecondaryImagesBtn = document.getElementById("loadSecondaryImages");
 loadImagesBtn.addEventListener("click", function () {
   fetch(URL1, {
     headers: {
-      Authorization: "a2uLH6Bzje63OvM0wZRrOTrUZFRTxHfr7WFEwbTU735I5kv2v5q6LnZT"
+      Authorization: auth
     }
   })
     .then(response => {
@@ -97,7 +97,7 @@ loadImagesBtn.addEventListener("click", function () {
 loadSecondaryImagesBtn.addEventListener("click", function () {
   fetch(URL2, {
     headers: {
-      Authorization: "a2uLH6Bzje63OvM0wZRrOTrUZFRTxHfr7WFEwbTU735I5kv2v5q6LnZT"
+      Authorization: auth
     }
   })
     .then(response => {
