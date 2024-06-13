@@ -24,5 +24,9 @@ window.addEventListener("DOMContentLoaded", function () {
     .then(picObj => {
       console.log(picObj);
       body.style.backgroundColor = `${picObj.avg_color}`;
+      const detailsImg = document.createElement("img");
+      detailsImg.setAttribute("src", `${picObj.src.landscape}`);
+      detailsImg.style.width = "100%";
+      container.appendChild(detailsImg);
     });
 });
