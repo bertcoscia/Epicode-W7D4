@@ -68,21 +68,7 @@
 
 <body>
   <header>
-    <div class="collapse bg-dark" id="navbarToggleExternalContent">
-      <div class="container">
-        <div class="row flex-column">
-          <div class="col-sm-8 col-md-7 py-4 text-white">
-            <h4>About</h4>
-            <p class="text-gray">
-              Add some information about the album below, the author, or any
-              other background context. Make it a few sentences long so folks
-              can pick up some informative tidbits. Then, link them off to
-              some social networking sites or contact information.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid justify-content-between">
         <a href="#" class="navbar-brand d-flex align-items-center">
@@ -109,8 +95,12 @@
           them in a cool way!
         </p>
         <p>
-          <a href="#" class="btn btn-primary my-2" id="loadImages">Load Images</a>
-          <a href="#" class="btn btn-secondary my-2" id="loadSecondaryImages">Load Secondary Images</a>
+        <form id="picsSearchForm">
+          <input type="text" placeholder="Search pics" id="picsSearchBar" class="p-2" required>
+          <button class="btn btn-info">Search</button>
+        </form>
+        <a href="#" class="btn btn-primary my-2" id="loadImages">Load Images</a>
+        <a href="#" class="btn btn-secondary my-2" id="loadSecondaryImages">Load Secondary Images</a>
         </p>
       </div>
     </section>
