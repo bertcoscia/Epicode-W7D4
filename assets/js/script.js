@@ -286,6 +286,7 @@ picsSearchForm.onsubmit = event => {
       });
     })
     .catch(err => console.log(err));
+  picsSearchForm.reset();
 };
 
 window.addEventListener("DOMContentLoaded", function () {});
