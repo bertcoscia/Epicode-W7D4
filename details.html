@@ -68,24 +68,10 @@
 
 <body>
     <header>
-        <div class="collapse bg-dark" id="navbarToggleExternalContent">
-            <div class="container">
-                <div class="row flex-column">
-                    <div class="col-sm-8 col-md-7 py-4 text-white">
-                        <h4>About</h4>
-                        <p class="text-gray">
-                            Add some information about the album below, the author, or any
-                            other background context. Make it a few sentences long so folks
-                            can pick up some informative tidbits. Then, link them off to
-                            some social networking sites or contact information.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">
+                <a href="./" class="navbar-brand d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round"
                         stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24" focusable="false">
                         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
@@ -101,21 +87,8 @@
         </nav>
     </header>
     <main role="main">
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">Album API example</h1>
-                <p class="lead text-muted">
-                    This page will dynamically load pictures from the web, and display
-                    them in a cool way!
-                </p>
-                <p>
-                    <a href="#" class="btn btn-primary my-2">Load Images</a>
-                    <a href="#" class="btn btn-secondary my-2">Load Secondary Images</a>
-                </p>
-            </div>
-        </section>
-        <div class="album py-5 bg-light">
-            <div class="row"></div>
+        <div class="container">
+
         </div>
     </main>
     <footer class="text-muted">
@@ -127,72 +100,8 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-    <!-- <script>
-        //creo i div .col
-        const col = document.createElement("div");
-        col.className = "col-md-4";
-        row.appendChild(col);
+    <script src="./assets/js/details.js"></script>
 
-        // creo i div .card
-        const card = document.createElement("div");
-        card.className = "card";
-        card.classList.add("mb-4", "shadow-sm");
-        col.appendChild(card);
-
-        // genero cardImg
-        const cardImg = document.createElement("img");
-        cardImg.setAttribute("src", `${pic.src.large}`);
-        card.appendChild(cardImg);
-
-        // creo il div .card-body
-        const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
-        card.appendChild(cardBody);
-
-        // creo h5
-        const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";
-        cardTitle.innerText = `${pic.alt}`;
-        cardBody.appendChild(cardTitle);
-
-        // creo il div .card-text
-        const cardText = document.createElement("div");
-        cardText.className = "card-text";
-        cardBody.appendChild(cardText);
-
-        // creo il cardFooter
-        const cardFooter = document.createElement("div");
-        cardFooter.className = "d-flex";
-        cardFooter.classList.add("justify-content-between", "align-items-center");
-        cardBody.appendChild(cardFooter);
-
-        // creo il button group
-        const btnGroup = document.createElement("div");
-        btnGroup.className = "btn-group";
-        cardFooter.appendChild(btnGroup);
-
-        // creo i due bottoni
-        const viewBtn = document.createElement("button");
-        viewBtn.className = "btn";
-        viewBtn.classList.add("btn-sm", "btn-outline-secondary");
-        viewBtn.setAttribute("type", "button");
-        viewBtn.innerText = "View";
-        btnGroup.appendChild(viewBtn);
-
-        const hideBtn = document.createElement("button");
-        hideBtn.className = "btn";
-        hideBtn.classList.add("btn-sm", "btn-outline-secondary");
-        hideBtn.setAttribute("type", "button");
-        hideBtn.innerText = "Hide";
-        btnGroup.appendChild(hideBtn);
-
-        // creo picId
-        const picId = document.createElement("small");
-        picId.className = "text-muted";
-        picId.innerText = `${pic.id}`;
-        cardFooter.appendChild(picId);
-    </script> -->
 </body>
 
 </html>

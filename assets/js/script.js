@@ -41,19 +41,27 @@ loadImagesBtn.addEventListener("click", function () {
         card.classList.add("mb-4", "shadow-sm");
         col.appendChild(card);
 
+        // genero il linkImg per i dettagli
+        const cardImgAnchor = document.createElement("a");
+        cardImgAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
+
         // genero cardImg
         const cardImg = document.createElement("img");
         cardImg.setAttribute("src", `${pic.src.large}`);
-        card.appendChild(cardImg);
+        cardImg.style.width = "100%";
+        cardImgAnchor.appendChild(cardImg);
+        card.appendChild(cardImgAnchor);
 
         // creo il div .card-body
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
 
-        // creo h5
-        const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";
-        cardTitle.innerText = `${pic.alt}`;
+        // genero il linkTitle per i dettagli
+        const cardTitleAnchor = document.createElement("a");
+        cardTitleAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
+        cardTitleAnchor.classList.add("link-underline", "link-underline-opacity-0");
+        cardTitleAnchor.innerText = `${pic.alt}`;
+        card.appendChild(cardTitleAnchor);
 
         // creo il div .card-text
         const cardText = document.createElement("div");
@@ -98,7 +106,6 @@ loadImagesBtn.addEventListener("click", function () {
         picId.innerText = `${pic.id}`;
 
         card.appendChild(cardBody);
-        cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
         cardBody.appendChild(cardFooter);
         cardFooter.appendChild(btnGroup);
@@ -142,19 +149,27 @@ loadSecondaryImagesBtn.addEventListener("click", function () {
         card.classList.add("mb-4", "shadow-sm");
         col.appendChild(card);
 
+        // genero il linkImg per i dettagli
+        const cardImgAnchor = document.createElement("a");
+        cardImgAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
+
         // genero cardImg
         const cardImg = document.createElement("img");
         cardImg.setAttribute("src", `${pic.src.large}`);
-        card.appendChild(cardImg);
+        cardImg.style.width = "100%";
+        cardImgAnchor.appendChild(cardImg);
+        card.appendChild(cardImgAnchor);
 
         // creo il div .card-body
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
 
-        // creo h5
-        const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";
-        cardTitle.innerText = `${pic.alt}`;
+        // genero il linkTitle per i dettagli
+        const cardTitleAnchor = document.createElement("a");
+        cardTitleAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
+        cardTitleAnchor.classList.add("link-underline", "link-underline-opacity-0");
+        cardTitleAnchor.innerText = `${pic.alt}`;
+        card.appendChild(cardTitleAnchor);
 
         // creo il div .card-text
         const cardText = document.createElement("div");
@@ -199,7 +214,6 @@ loadSecondaryImagesBtn.addEventListener("click", function () {
         picId.innerText = `${pic.id}`;
 
         card.appendChild(cardBody);
-        cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
         cardBody.appendChild(cardFooter);
         cardFooter.appendChild(btnGroup);
@@ -245,19 +259,27 @@ picsSearchForm.onsubmit = event => {
         card.classList.add("mb-4", "shadow-sm");
         col.appendChild(card);
 
+        // genero il linkImg per i dettagli
+        const cardImgAnchor = document.createElement("a");
+        cardImgAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
+
         // genero cardImg
         const cardImg = document.createElement("img");
         cardImg.setAttribute("src", `${pic.src.large}`);
-        card.appendChild(cardImg);
+        cardImg.style.width = "100%";
+        cardImgAnchor.appendChild(cardImg);
+        card.appendChild(cardImgAnchor);
 
         // creo il div .card-body
         const cardBody = document.createElement("div");
         cardBody.className = "card-body";
 
-        // creo h5
-        const cardTitle = document.createElement("h5");
-        cardTitle.className = "card-title";
-        cardTitle.innerText = `${pic.alt}`;
+        // genero il linkTitle per i dettagli
+        const cardTitleAnchor = document.createElement("a");
+        cardTitleAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
+        cardTitleAnchor.classList.add("link-underline", "link-underline-opacity-0");
+        cardTitleAnchor.innerText = `${pic.alt}`;
+        card.appendChild(cardTitleAnchor);
 
         // creo il div .card-text
         const cardText = document.createElement("div");
@@ -302,7 +324,6 @@ picsSearchForm.onsubmit = event => {
         picId.innerText = `${pic.id}`;
 
         card.appendChild(cardBody);
-        cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
         cardBody.appendChild(cardFooter);
         cardFooter.appendChild(btnGroup);
