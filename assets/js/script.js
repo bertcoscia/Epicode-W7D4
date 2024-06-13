@@ -23,93 +23,101 @@ const fetchImages = query => {
       }
     })
     .then(requestedPics => {
-      const data = requestedPics;
       const row = document.getElementById("cardsContainer");
       row.innerHTML = "";
-      data.photos.forEach(pic => {
-        //creo i div .col
-        const col = document.createElement("div");
-        col.className = "col-md-4";
+      const data = requestedPics;
+      if (data.total_results === 0) {
+        console.log(requestedPics);
+        const teaPot = document.createElement("img");
+        teaPot.src = "https://esprlog.net/wp-content/uploads/2020/03/teapot-top.jpg";
+        const header = document.createElement("h2");
+        header.innerText = "We are sorry, try searching for something else";
+        header.className = "text-center mb-4";
+        row.appendChild(header);
+        row.appendChild(teaPot);
+      } else {
+        console.log(data);
+        data.photos.forEach(pic => {
+          //creo i div .col
+          const col = document.createElement("div");
+          col.className = "col-md-4";
 
-        // creo i div .card
-        const card = document.createElement("div");
-        card.className = "card";
-        card.classList.add("mb-4", "shadow-sm");
-        col.appendChild(card);
+          // creo i div .card
+          const card = document.createElement("div");
+          card.className = "card mb-4 shadow-sm";
+          col.appendChild(card);
 
-        // genero il linkImg per i dettagli
-        const cardImgAnchor = document.createElement("a");
-        cardImgAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
+          // genero il linkImg per i dettagli
+          const cardImgAnchor = document.createElement("a");
+          cardImgAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
 
-        // genero cardImg
-        const cardImg = document.createElement("img");
-        cardImg.setAttribute("src", `${pic.src.large}`);
-        cardImg.style.width = "100%";
-        cardImgAnchor.appendChild(cardImg);
-        card.appendChild(cardImgAnchor);
+          // genero cardImg
+          const cardImg = document.createElement("img");
+          cardImg.src = pic.src.large;
+          cardImg.style.width = "100%";
+          cardImgAnchor.appendChild(cardImg);
+          card.appendChild(cardImgAnchor);
 
-        // creo il div .card-body
-        const cardBody = document.createElement("div");
-        cardBody.className = "card-body";
+          // creo il div .card-body
+          const cardBody = document.createElement("div");
+          cardBody.className = "card-body";
 
-        // genero il linkTitle per i dettagli
-        const cardTitleAnchor = document.createElement("a");
-        cardTitleAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
-        cardTitleAnchor.classList.add("link-underline", "link-underline-opacity-0");
-        cardTitleAnchor.innerText = `${pic.alt}`;
-        card.appendChild(cardTitleAnchor);
+          // genero il linkTitle per i dettagli
+          const cardTitleAnchor = document.createElement("a");
+          cardTitleAnchor.setAttribute("href", `./details.html?picId=${pic.id}`);
+          cardTitleAnchor.className = "link-underline link-underline-opacity-0";
+          cardTitleAnchor.innerText = pic.alt;
+          card.appendChild(cardTitleAnchor);
 
-        // creo il div .card-text
-        const cardText = document.createElement("div");
-        cardText.className = "card-text";
+          // creo il div .card-text
+          const cardText = document.createElement("div");
+          cardText.className = "card-text";
 
-        // creo il cardFooter
-        const cardFooter = document.createElement("div");
-        cardFooter.className = "d-flex";
-        cardFooter.classList.add("justify-content-between", "align-items-center");
+          // creo il cardFooter
+          const cardFooter = document.createElement("div");
+          cardFooter.className = "d-flex justify-content-between align-items-center";
 
-        // creo il button group
-        const btnGroup = document.createElement("div");
-        btnGroup.className = "btn-group";
+          // creo il button group
+          const btnGroup = document.createElement("div");
+          btnGroup.className = "btn-group";
 
-        // creo i due bottoni
-        const viewBtn = document.createElement("button");
-        viewBtn.className = "btn";
-        viewBtn.classList.add("btn-sm", "btn-outline-success");
-        viewBtn.setAttribute("type", "button");
-        viewBtn.setAttribute("data-bs-toggle", "modal");
-        viewBtn.setAttribute("data-bs-target", "#imgModal");
-        viewBtn.innerText = "View";
-        viewBtn.onclick = () => {
-          modalBody.innerHTML = "";
-          const modalImg = document.createElement("img");
-          modalImg.setAttribute("src", pic.src.tiny);
-          modalBody.appendChild(modalImg);
-        };
+          // creo i due bottoni
+          const viewBtn = document.createElement("button");
+          viewBtn.className = "btn btn-sm btn-outline-success";
+          viewBtn.setAttribute("type", "button");
+          viewBtn.setAttribute("data-bs-toggle", "modal");
+          viewBtn.setAttribute("data-bs-target", "#imgModal");
+          viewBtn.innerText = "View";
+          viewBtn.onclick = () => {
+            modalBody.innerHTML = "";
+            const modalImg = document.createElement("img");
+            modalImg.src = pic.src.tiny;
+            modalBody.appendChild(modalImg);
+          };
 
-        const hideBtn = document.createElement("button");
-        hideBtn.className = "btn";
-        hideBtn.classList.add("btn-sm", "btn-outline-danger");
-        hideBtn.setAttribute("type", "button");
-        hideBtn.innerText = "Hide";
-        hideBtn.addEventListener("click", () => {
-          col.remove();
+          const hideBtn = document.createElement("button");
+          hideBtn.className = "btn btn-sm btn-outline-danger";
+          hideBtn.setAttribute("type", "button");
+          hideBtn.innerText = "Hide";
+          hideBtn.addEventListener("click", () => {
+            col.remove();
+          });
+
+          // creo picId
+          const picId = document.createElement("small");
+          picId.className = "text-muted";
+          picId.innerText = pic.id;
+
+          card.appendChild(cardBody);
+          cardBody.appendChild(cardText);
+          cardBody.appendChild(cardFooter);
+          cardFooter.appendChild(btnGroup);
+          btnGroup.appendChild(viewBtn);
+          btnGroup.appendChild(hideBtn);
+          cardFooter.appendChild(picId);
+          row.appendChild(col);
         });
-
-        // creo picId
-        const picId = document.createElement("small");
-        picId.className = "text-muted";
-        picId.innerText = `${pic.id}`;
-
-        card.appendChild(cardBody);
-        cardBody.appendChild(cardText);
-        cardBody.appendChild(cardFooter);
-        cardFooter.appendChild(btnGroup);
-        btnGroup.appendChild(viewBtn);
-        btnGroup.appendChild(hideBtn);
-        cardFooter.appendChild(picId);
-        row.appendChild(col);
-      });
+      }
     })
     .catch(err => console.log(err));
 };
