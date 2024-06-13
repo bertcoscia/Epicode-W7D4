@@ -30,7 +30,7 @@ loadImagesBtn.addEventListener("click", function () {
       console.log("data", data.photos);
       const row = document.getElementById("cardsContainer");
       row.innerHTML = "";
-      data.photos.forEach((pic, index) => {
+      data.photos.forEach(pic => {
         //creo i div .col
         const col = document.createElement("div");
         col.className = "col-md-4";
