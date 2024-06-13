@@ -6,6 +6,9 @@ const loadImagesBtn = document.getElementById("loadImages");
 const loadSecondaryImagesBtn = document.getElementById("loadSecondaryImages");
 const picsSearchForm = document.getElementById("picsSearchForm");
 const picsSearchBar = document.getElementById("picsSearchBar");
+const imgModal = document.getElementById("imgModal");
+const modalBody = document.querySelector(".modal-body");
+const dismissBtn = document.getElementById("dismissBtn");
 
 loadImagesBtn.addEventListener("click", function () {
   fetch(URL1, {
@@ -27,7 +30,7 @@ loadImagesBtn.addEventListener("click", function () {
       console.log("data", data.photos);
       const row = document.getElementById("cardsContainer");
       row.innerHTML = "";
-      data.photos.forEach(pic => {
+      data.photos.forEach((pic, index) => {
         //creo i div .col
         const col = document.createElement("div");
         col.className = "col-md-4";
@@ -70,7 +73,15 @@ loadImagesBtn.addEventListener("click", function () {
         viewBtn.className = "btn";
         viewBtn.classList.add("btn-sm", "btn-outline-secondary");
         viewBtn.setAttribute("type", "button");
+        viewBtn.setAttribute("data-bs-toggle", "modal");
+        viewBtn.setAttribute("data-bs-target", "#imgModal");
         viewBtn.innerText = "View";
+        viewBtn.onclick = () => {
+          modalBody.innerHTML = "";
+          const modalImg = document.createElement("img");
+          modalImg.setAttribute("src", `${pic.src.tiny}`);
+          modalBody.appendChild(modalImg);
+        };
 
         const hideBtn = document.createElement("button");
         hideBtn.className = "btn";
@@ -113,10 +124,10 @@ loadSecondaryImagesBtn.addEventListener("click", function () {
         throw new Error("Couldn't get data");
       }
     })
-    .then(catPics => {
-      const data = catPics;
-      console.log(catPics);
-      console.log(catPics.photos);
+    .then(mountainPics => {
+      const data = mountainPics;
+      console.log(mountainPics);
+      console.log(mountainPics.photos);
       console.log("data", data.photos);
       const row = document.getElementById("cardsContainer");
       row.innerHTML = "";
@@ -163,7 +174,15 @@ loadSecondaryImagesBtn.addEventListener("click", function () {
         viewBtn.className = "btn";
         viewBtn.classList.add("btn-sm", "btn-outline-secondary");
         viewBtn.setAttribute("type", "button");
+        viewBtn.setAttribute("data-bs-toggle", "modal");
+        viewBtn.setAttribute("data-bs-target", "#imgModal");
         viewBtn.innerText = "View";
+        viewBtn.onclick = () => {
+          modalBody.innerHTML = "";
+          const modalImg = document.createElement("img");
+          modalImg.setAttribute("src", `${pic.src.tiny}`);
+          modalBody.appendChild(modalImg);
+        };
 
         const hideBtn = document.createElement("button");
         hideBtn.className = "btn";
@@ -208,10 +227,10 @@ picsSearchForm.onsubmit = event => {
         throw new Error("Couldn't get data");
       }
     })
-    .then(catPics => {
-      const data = catPics;
-      console.log(catPics);
-      console.log(catPics.photos);
+    .then(requestedPics => {
+      const data = requestedPics;
+      console.log(requestedPics);
+      console.log(requestedPics.photos);
       console.log("data", data.photos);
       const row = document.getElementById("cardsContainer");
       row.innerHTML = "";
@@ -258,7 +277,15 @@ picsSearchForm.onsubmit = event => {
         viewBtn.className = "btn";
         viewBtn.classList.add("btn-sm", "btn-outline-secondary");
         viewBtn.setAttribute("type", "button");
+        viewBtn.setAttribute("data-bs-toggle", "modal");
+        viewBtn.setAttribute("data-bs-target", "#imgModal");
         viewBtn.innerText = "View";
+        viewBtn.onclick = () => {
+          modalBody.innerHTML = "";
+          const modalImg = document.createElement("img");
+          modalImg.setAttribute("src", `${pic.src.tiny}`);
+          modalBody.appendChild(modalImg);
+        };
 
         const hideBtn = document.createElement("button");
         hideBtn.className = "btn";
