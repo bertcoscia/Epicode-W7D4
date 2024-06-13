@@ -1,25 +1,28 @@
 # Epicode-W7D4
+**Pexels Album**
 
-Pexels Album
+Scarica lo starting template dalla sezione Materiali, e implementa le seguenti funzionalità usando l'API di Pexels:
+## Funzionalità da Implementare
 
-Scarica lo starting template dalla sezione Materiali, e implementa le seguenti funzionalità usando l'API di Pexels: <br>
+1. **Load Images**: Carica le immagini usando l'API di Pexels con una query specificata a tua scelta.
+   - Endpoint: `https://api.pexels.com/v1/search?query=[your-query]`
 
-1) Premere sul bottone "Load Images" caricherà il contenuto delle API nella pagina: https://api.pexels.com/v1/search?query=[your-query]
+2. **Load Secondary Images**: Carica immagini con un'altra query a tua scelta.
+   - Endpoint: `https://api.pexels.com/v1/search?query=[your-secondary-query]`
 
-2) Premere sul bottone "Load Secondary Images" invece dovrà usare una diversa query: https://api.pexels.com/v1/search?query=[your-secondary-query]
+3. **Sostituisci il bottone "Edit" con "Hide"**:
+   - Quando premuto, nasconde l'intera card dell'immagine.
 
-3) Il tasto "Edit" andrà sostituito con un tasto "Hide".
+4. **Sostituisci "9 mins" con l'id dell'immagine corrispondente.** 
 
-4) Quando si preme "Hide", l'intera card dovrebbe scomparire.
+5. **Ricerca Dinamica**: Aggiungi un campo di ricerca per aggiornare le immagini con una nuova query.
 
-5) Sostituisci il testo "9 mins" del template delle card con l'id dell'immagine corrispondente.
+6. **Dettaglio Immagine**: Cliccando sull'immagine o sul suo nome, l'utente verrà indirizzato a una pagina di dettaglio.
+   - Mostra l'immagine, il nome dell'artista e un link alla pagina personale dell'artista.
+   - Fornisci un pulsante per tornare indietro alla pagina principale.
 
-6) Nella sezione principale aggiungi un campo di ricerca. Usa il valore di questo campo per cercare nuove immagini rimpiazzando quelle esistenti.
+### Extra
 
-7) Cliccare l'immagine o il suo nome farà cambiare pagina verso una di dettaglio dell'immagine. Qui dovrai visualizzare immagine, nome artista e linkare la sua pagina personale. Dai la possibilità all'utente di tornare indietro.
+7. **Background Dinamico**: La pagina di dettaglio dell'immagine avrà come background la media dei colori presenti nell'immagine stessa.
 
-[EXTRA]
-
-8) Il background della pagina di dettaglio dovrà essere la media dei colori presenti in quella foto.
-
-9) Quando l'utente clicca su bottone "VIEW" della Card, apri l'immagine corrispondente in un modale.
+8. **Modal per Visualizzare Immagine**: Cliccare su "VIEW" nella card apre l'immagine corrispondente in un modale.
