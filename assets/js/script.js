@@ -1,7 +1,8 @@
 const URL = "https://api.pexels.com/v1/search?query=cat";
 const auth = "a2uLH6Bzje63OvM0wZRrOTrUZFRTxHfr7WFEwbTU735I5kv2v5q6LnZT";
+const loadImagesBtn = document.getElementById("loadImages");
 
-window.addEventListener("DOMContentLoaded", function () {
+loadImagesBtn.addEventListener("click", function () {
   fetch(URL, {
     headers: {
       Authorization: "a2uLH6Bzje63OvM0wZRrOTrUZFRTxHfr7WFEwbTU735I5kv2v5q6LnZT"
@@ -90,3 +91,5 @@ window.addEventListener("DOMContentLoaded", function () {
     })
     .catch(err => console.log(err));
 });
+
+window.addEventListener("DOMContentLoaded", function () {});
