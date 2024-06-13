@@ -34,6 +34,7 @@ window.addEventListener("DOMContentLoaded", function () {
       // creo il nome dell'artista
       const artist = document.createElement("h2");
       artist.innerText = `${picObj.photographer}`;
+      artist.className = "text-danger";
       container.appendChild(artist);
 
       // creo il link dell'artista
