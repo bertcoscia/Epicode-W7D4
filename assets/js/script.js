@@ -4,6 +4,8 @@ const auth = "a2uLH6Bzje63OvM0wZRrOTrUZFRTxHfr7WFEwbTU735I5kv2v5q6LnZT";
 const loadImagesBtn = document.getElementById("loadImages");
 const loadSecondaryImagesBtn = document.getElementById("loadSecondaryImages");
 
+const deleteCard = () => {};
+
 loadImagesBtn.addEventListener("click", function () {
   fetch(URL1, {
     headers: {
@@ -74,6 +76,9 @@ loadImagesBtn.addEventListener("click", function () {
         hideBtn.classList.add("btn-sm", "btn-outline-secondary");
         hideBtn.setAttribute("type", "button");
         hideBtn.innerText = "Hide";
+        hideBtn.addEventListener("click", () => {
+          card.remove();
+        });
 
         // creo picId
         const picId = document.createElement("small");
@@ -164,6 +169,9 @@ loadSecondaryImagesBtn.addEventListener("click", function () {
         hideBtn.classList.add("btn-sm", "btn-outline-secondary");
         hideBtn.setAttribute("type", "button");
         hideBtn.innerText = "Hide";
+        hideBtn.addEventListener("click", () => {
+          card.remove();
+        });
 
         // creo picId
         const picId = document.createElement("small");
