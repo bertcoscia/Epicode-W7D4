@@ -35,5 +35,15 @@ window.addEventListener("DOMContentLoaded", function () {
       const artist = document.createElement("h2");
       artist.innerText = `${picObj.photographer}`;
       container.appendChild(artist);
+
+      // creo il link dell'artista
+      const artistLink = document.createElement("a");
+      artistLink.setAttribute("href", `${picObj.photographer_url}`);
+      artistLink.setAttribute("target", "_blank");
+      const artistLinkImg = document.createElement("img");
+      artistLinkImg.setAttribute("src", "https://www.drupal.org/files/project-images/pexels_logo_0.png");
+      artistLinkImg.style.width = "50px";
+      artistLink.appendChild(artistLinkImg);
+      container.appendChild(artistLink);
     });
 });
